@@ -2,6 +2,18 @@ const express = require("express")
 const app = express()
 
 const Restaurant = require("../models/Restaurant")
+//const restaurantSeed = require("../models/seed")
+
+/*
+//Seed Data
+Restaurant.create(restaurantSeed)
+.then(data => {
+    console.log("added restaurants")
+    })
+    .catch(err => {
+    console.log(err.message)
+})
+*/
 
 //Index
 app.get("/", async (req, res) => {
@@ -40,7 +52,7 @@ app.get("/:id", async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
         res.render("./restaurant/show.ejs", {
-            product,
+            restaurant,
             tabTitle: `${restaurant.name}`
         })
     } catch (err) {
