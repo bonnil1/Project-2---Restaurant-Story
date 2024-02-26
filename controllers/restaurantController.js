@@ -41,7 +41,7 @@ app.get("/new", async (req, res) => {
 app.post("/", async (req, res) => {
     try {
         const newRestaurant = await Restaurant.create(req.body)
-        res.redirect("/")
+        res.redirect(`/restaurants/${restaurant.id}`)
     } catch (err) {
         console.log(err)
     }
@@ -79,7 +79,7 @@ app.put("/:id", async (req, res) => {
         const restaurant = await Restaurant.findById(req.params.id)
         const edittedRes = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {new: true})
         edittedRes.save
-        res.redirect(`/${restaurant.id}`)
+        res.redirect(`/restaurants/${restaurant.id}`)
     } catch(err) {
         console.log(err)
     }
@@ -90,7 +90,7 @@ app.delete("/:id", async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
         await restaurant.deleteOne()
-        res.redirect("/")
+        res.redirect("/restaurants")
     } catch (err) {
         console.log(err)
     }

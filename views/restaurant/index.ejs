@@ -4,11 +4,18 @@
 <body>
     <%- include ("../partials/header.ejs") %>
     <h1>My Restaurant Story</h1>
-    <% for (let i = 0; i < restaurants.length; i++) { %>
-        <a href="restaurants/<%= restaurants[i].id %>">
-            <img src="<%= restaurants[i].img %>" alt="image of restaurant">
-        </a>
-    <% } %>
+    <div class="parent-container">
+        <% for (let i = 0; i < restaurants.length; i++) { %>
+            <div class="container">
+                <div>
+                    <a href="restaurants/<%= restaurants[i].id %>">
+                        <img src="<%= restaurants[i].img %>" alt="image of restaurant">
+                    </a>
+                </div>
+                <div><h2><%= restaurants[i].name %></h2></div>
+            </div>
+        <% } %>
+    </div>
     <%- include ("../partials/footer.ejs") %>
 </body>
 </html>

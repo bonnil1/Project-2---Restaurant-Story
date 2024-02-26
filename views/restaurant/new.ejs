@@ -5,16 +5,20 @@
     <%- include ("../partials/header.ejs") %>
     <h1>Add a Restaurant:</h1>
     <form action="/restaurants" method="POST">
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" placeholder="enter name"/>
-
-        <label for="address">Address: </label>
-        <input type="text" name="address" id="address" placeholder="enter address"/>
-
-        <label for="hours">Operation Hours: </label>
-        <input type="text" name="hours" id="hours" placeholder="enter hours of operation"/>
-
-        <label for="price">Price Range: </label>
+        <div class="form-container">
+        <div class="form">
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" placeholder="enter name"/>
+    
+            <label for="address">Address: </label>
+            <input type="text" name="address" id="address" placeholder="enter address"/>
+    
+            <label for="hours">Operation Hours: </label>
+            <input type="text" name="hours" id="hours" placeholder="enter hours of operation"/>
+        </div>
+        
+        <div class="form">
+            <label for="price">Price Range: </label>
         <input type="text" name="price" id="price" placeholder="enter price"/>
 
         <label for="cuisine">Cuisine: </label>
@@ -22,13 +26,17 @@
 
         <label for="rating">Rating: </label>
         <input type="text" name="rating" id="rating" placeholder="enter rating"/>
-
-        <label for="img">Image URL: </label>
+        </div>
+        
+        <div class="form">
+            <label for="img">Image URL: </label>
         <input type="text" name="img" id="img" placeholder="enter image url"/>
 
         <label for="description">Description: </label>
         <input type="text" name="description" id="description" placeholder="enter description"/>
-
+        </div>
+        </div>
+        <h1></h1>
         <input type="submit" value="Add Restaurant!" class="btn"/>
     </form>
 
