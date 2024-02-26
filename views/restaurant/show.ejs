@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ("../partials/head.ejs") %>
+<body>
+    <%- include ("../partials/header.ejs") %>
+    <h1><%= restaurant.name %></h1>
+    <h2>Cuisine: <%= restaurant.cuisine %></h2>
+    <h3><%= restaurant.price %></h3>
+    <h3><%= restaurant.rating %></h3>
+    <img src="<%= restaurant.img %>" alt="image">
+    <h3><%= restaurant.address %></h3>
+    <%- include ("../partials/footer.ejs") %>
+</body>
+</html>

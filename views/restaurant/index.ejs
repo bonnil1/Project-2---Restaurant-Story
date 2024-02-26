@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ("../partials/head.ejs") %>
+<body>
+    <%- include ("../partials/header.ejs") %>
+    <h1>My Restaurant Story</h1>
+    <% for (let i = 0; i < restaurants.length; i++) { %>
+        <a href="restaurants/<%= restaurants[i].id %>">
+            <img src="<%= restaurants[i].img %>" alt="image of restaurant">
+        </a>
+    <% } %>
+    <%- include ("../partials/footer.ejs") %>
+</body>
+</html>

@@ -2,6 +2,7 @@ require("dotenv").config()
 
 const express = require("express")
 const app = express()
+const methodOverride = require("method-override")
 
 const mongoose = require("mongoose")
 const mongoURI = process.env.MONGO_URI
@@ -16,6 +17,7 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
 app.use(express.static("public"))
+app.use(methodOverride("_method"))
 app.use("/restaurants", require("./controllers/restaurantController"))
 
 
