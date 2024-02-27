@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 
 const Restaurant = require("../models/Restaurant")
+const isAuthenticated = require("../controllers/isAuthenticated")
 //const restaurantSeed = require("../models/seed")
 
 /*
@@ -19,18 +20,23 @@ Restaurant.create(restaurantSeed)
 app.get("/", async (req, res) => {
     try {
         const restaurants = await Restaurant.find()
-        res.render("./restaurant/index.ejs", {restaurants, tabTitle: "Home"})
+        res.render("./restaurant/index.ejs", {
+            restaurants, 
+            tabTitle: "Home",
+            currentUser: req.session.currentUser
+        })
     } catch(err) {
         console.log(err)
     }
 })
 
 //New
-app.get("/new", async (req, res) => {
+app.get("/new", isAuthenticated, async (req, res) => {
     try {
         res.render("./restaurant/new.ejs", {
             restaurant: Restaurant(req.params.id),
-            tabTitle: "Add Restaurant"
+            tabTitle: "Add Restaurant",
+            currentUser: req.session.currentUser
         })
     } catch (err) {
         console.log(err)
@@ -38,10 +44,10 @@ app.get("/new", async (req, res) => {
 })
 
 //Create
-app.post("/", async (req, res) => {
+app.post("/", isAuthenticated, async (req, res) => {
     try {
         const newRestaurant = await Restaurant.create(req.body)
-        res.redirect(`/restaurants/${restaurant.id}`)
+        res.redirect("/restaurants")
     } catch (err) {
         console.log(err)
     }
@@ -53,7 +59,8 @@ app.get("/:id", async (req, res) => {
         const restaurant = await Restaurant.findById(req.params.id)
         res.render("./restaurant/show.ejs", {
             restaurant,
-            tabTitle: `${restaurant.name}`
+            tabTitle: `${restaurant.name}`,
+            currentUser: req.session.currentUser
         })
     } catch (err) {
         console.log(err)
@@ -61,12 +68,13 @@ app.get("/:id", async (req, res) => {
 })
 
 //Edit
-app.get("/:id/edit", async (req, res) => {
+app.get("/:id/edit", isAuthenticated, async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
         res.render("./restaurant/edit.ejs", {
             restaurant,
-            tabTitle: `Edit | ${restaurant.name}`
+            tabTitle: `Edit | ${restaurant.name}`,
+            currentUser: req.session.currentUser
         })
     } catch (err) {
         console.log(err)
@@ -74,7 +82,7 @@ app.get("/:id/edit", async (req, res) => {
 })
 
 //Update
-app.put("/:id", async (req, res) => {
+app.put("/:id", isAuthenticated, async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
         const edittedRes = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {new: true})
@@ -86,7 +94,7 @@ app.put("/:id", async (req, res) => {
 })
 
 //Delete
-app.delete("/:id", async (req, res) => {
+app.delete("/:id", isAuthenticated, async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
         await restaurant.deleteOne()

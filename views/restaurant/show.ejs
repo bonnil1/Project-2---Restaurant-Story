@@ -13,8 +13,11 @@
     <h3><%= restaurant.description %></h3>
     <h3><%= restaurant.address %></h3>
     <h3><%= restaurant.hours %></h3>
-    <h3>Parking: <%= restaurant.parking %></h3>
-
+    <% if (restaurant.parking == false) { %>
+        <h3>Parking: no</h3>
+    <% } else { %>
+        <h3>Parking: yes</h3>
+    <% } %>
     <div class="btn-format">
         <button class="btn"><a href="/restaurants/<%= restaurant.id %>/edit" type="button">Edit</a></button>
 
