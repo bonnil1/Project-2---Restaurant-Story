@@ -1,16 +1,22 @@
 <nav>
-    <a href="/restaurants" style="margin: 20px">Home</a>
+    <div>
+    <div class="nav-right">
+    <div class="nav-right-child"><a href="/restaurants" class="nav-left">Home</a></div>
     <% if (currentUser) { %>
-        <a href="/restaurants/new">Add Restaurant</a>
-        <li>Welcome <%= currentUser.username %></li>
-        <li>
-            <form action="/sessions?_method=DELETE" method="POST">
-                <input type="submit" value="Log Out" />
-            </form>
-        </li>
+        <div class="nav-right-child"><a href="/restaurants/new" class="nav-left">Add Restaurant</a></div>
+    </div>
+        Welcome <%= currentUser.username %>
+        <div class="nav-left">
+                <form action="/sessions?_method=DELETE" method="POST">
+                    <input type="submit" value="Log Out" class="log-out-btn"/>
+                </form>
+        </div>
     <% } else { %>
-        <li><a href="/users/new">Sign Up</a></li>
-        <li><a href="/sessions/new">Log In</a></li>
+        <div class="nav-left">
+            <div class="nav-left-child"><a href="/users/new">Sign Up</a></div>
+            <div class="nav-left-child"><a href="/sessions/new">Log In</a></div>
+        </div>
+    </div>
     <% } %>
     <hr>
 </nav>

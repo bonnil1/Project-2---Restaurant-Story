@@ -5,9 +5,12 @@
     <%- include('../partials/header') %>
     <h1>Sign Up</h1>
     <form action="/users" method="POST">
-        Username: <input required type="text" name="username"/><br>
-        Password: <input required type="text" name="password"><br>
-        <input type="submit" name="" value="Sign Up"/>
+        <div class="form-container-2">
+            <div class="form">Username: <input required type="text" name="username"/><br></div>
+            <div class="form">Password: <input required type="text" name="password"><br></div>
+        </div>
+        <h1></h1>
+        <input type="submit" name="" value="Sign Up" class="btn"/>
     </form>
     <%- include ("../partials/footer.ejs") %>
 </body>

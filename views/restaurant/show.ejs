@@ -5,9 +5,9 @@
     <%- include ("../partials/header.ejs") %>
     <h1><%= restaurant.name %></h1>
     <div>
-        <div class="child"><h3><%= restaurant.cuisine %> | </h3></div>
-        <div class="child"><h3><%= restaurant.price %> | </h3></div>
-        <div class="child"><h3>☆: <%= restaurant.rating %></h3></div>
+        <div class="show-child"><h3><%= restaurant.cuisine %> | </h3></div>
+        <div class="show-child"><h3><%= restaurant.price %> | </h3></div>
+        <div class="show-child"><h3>☆: <%= restaurant.rating %></h3></div>
     </div>
     <img src="<%= restaurant.img %>" alt="image">
     <h3><%= restaurant.description %></h3>
@@ -20,9 +20,9 @@
     <% } %>
     <div class="btn-format">
         <button class="btn"><a href="/restaurants/<%= restaurant.id %>/edit" type="button">Edit</a></button>
-
+        <h2></h2>
         <form action="/restaurants/<%= restaurant.id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete" id="button" class="btn"/>
+            <input type="submit" value="Delete" id="button" class="btn delete-btn"/>
         </form>
     </div>  
 

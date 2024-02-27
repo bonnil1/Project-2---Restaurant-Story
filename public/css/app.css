@@ -29,6 +29,12 @@ img {
     margin: auto;
 }
 
+.form-container-2 {
+    border: 3px solid #6e4f53;
+    width: 190px;
+    margin: auto;
+}
+
 .form {
     text-align: left;
     margin: 20px;
@@ -44,6 +50,23 @@ img {
 
 }
 
+.delete-btn {
+    text-decoration: underline;
+}
+
+.log-out-btn {
+    font-family: "Barriecito", system-ui;
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    
+}
+
+.log-out-btn:hover {
+    color: white;
+}
+
 a:link {
     color: black;
 }
@@ -56,6 +79,26 @@ a:hover {
     color: white;
 }
 
-.child {
+.show-child {
     display: inline-block;
+}
+
+.nav-left {
+    text-align: left;
+}
+
+.nav-left-child {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.nav-right {
+    text-align: right;
+}
+
+.nav-right-child {
+    display: inline-block;
+    margin-right: 5px;
+    margin-left: 20px;
 }
