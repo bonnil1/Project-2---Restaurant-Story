@@ -1,5 +1,11 @@
 const mongoose = require("mongoose")
 
+const commentSchema = new mongoose.Schema({
+    user: String,
+    rating: Number,
+    description: String,
+}, {timestamps: true})
+
 const restaurantSchema = new mongoose.Schema({
     name: String,
     address: String,
@@ -9,7 +15,8 @@ const restaurantSchema = new mongoose.Schema({
     rating: Number,
     img: String,
     description: String,
-    parking: Boolean
+    parking: Boolean,
+    comments: [commentSchema]
 })
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema)

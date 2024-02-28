@@ -83,22 +83,16 @@ a:hover {
     display: inline-block;
 }
 
-.nav-left {
-    text-align: left;
+.nav-container {
+    display: flex;
+    flex-direction: row;
 }
 
-.nav-left-child {
-    display: inline-block;
-    margin-left: 5px;
-    margin-right: 20px;
+.nav-left {
+    justify-content: flex-start;
+
 }
 
 .nav-right {
-    text-align: right;
-}
-
-.nav-right-child {
-    display: inline-block;
-    margin-right: 5px;
-    margin-left: 20px;
+    justify-content: flex-end;
 }

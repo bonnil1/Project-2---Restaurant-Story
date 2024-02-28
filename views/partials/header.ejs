@@ -1,10 +1,12 @@
 <nav>
-    <div>
-    <div class="nav-right">
-    <div class="nav-right-child"><a href="/restaurants" class="nav-left">Home</a></div>
-    <% if (currentUser) { %>
-        <div class="nav-right-child"><a href="/restaurants/new" class="nav-left">Add Restaurant</a></div>
-    </div>
+    <div class="nav-container">
+   
+        <div class="nav-right">
+            <a href="/restaurants" class="nav-left">Home</a>
+        <% if (currentUser) { %>
+            <a href="/restaurants/new" class="nav-left">Add Restaurant</a>
+        </div>
+
         Welcome <%= currentUser.username %>
         <div class="nav-left">
                 <form action="/sessions?_method=DELETE" method="POST">
@@ -12,11 +14,13 @@
                 </form>
         </div>
     <% } else { %>
+ 
         <div class="nav-left">
-            <div class="nav-left-child"><a href="/users/new">Sign Up</a></div>
-            <div class="nav-left-child"><a href="/sessions/new">Log In</a></div>
+            <a href="/users/new">Sign Up</a>
+            <a href="/sessions/new">Log In</a>
         </div>
+
     </div>
     <% } %>
-    <hr>
 </nav>
+<hr>

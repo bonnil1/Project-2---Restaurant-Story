@@ -28,6 +28,7 @@ app.use(session({
 app.use("/restaurants", require("./controllers/restaurantController"))
 app.use("/users", require("./controllers/userController"))
 app.use("/sessions", require("./controllers/sessions"))
+app.use("/restaurant", require("./controllers/comments"))
 
 app.listen(3000, () => {
     console.log("I'm listening...")
