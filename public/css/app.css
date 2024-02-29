@@ -54,6 +54,10 @@ img {
     text-decoration: underline;
 }
 
+.delete-btn:hover {
+    color: white;
+}
+
 .log-out-btn {
     font-family: "Barriecito", system-ui;
     font-size: medium;

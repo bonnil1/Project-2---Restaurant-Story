@@ -27,9 +27,9 @@
     </div>  
     <h2></h2>
     <hr>
-    <h2>Comments</h2>
+    <h2>Add a Comment!</h2>
     <div>
-        <form action="restaurants/<%= restaurant.id %>/comments>" method="POST"></form>
+        <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
         <textarea name="description"></textarea>
     </div>
     <div>
@@ -45,10 +45,19 @@
     <h2></h2>
         <input type="submit" value="Add Comment" class="btn"/>
     </form>
-    <% restaurant.comments.forEach(function(r) { %>
-        <%= r.description %>
-        <%= r.rating %>
-    <% }) %>
+    
+    <% if (restaurant.comments.length) { %>
+        <h2>Hear what people have to say!</h2>
+        <% restaurant.comments.forEach(function(r) { %>
+            <%= r.createdAt.toLocaleDateString() %>
+            <%= r.description %>
+            <%= r.rating %>
+        <% }) %>
+    <% } else { %>
+        <h3>No comments yet!</h3>
+    <% } %>
+   <%= restaurant.comments.description %>
+    
     <%- include ("../partials/footer.ejs") %>
 </body>
 </html>

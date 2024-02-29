@@ -9,6 +9,7 @@ module.exports = [
     "img": "https://i.imgur.com/rPMrQoH.png",
     "description": "Mochica spent a decade in the SOMA district of San Francisco, where its innovative cuisine, impressive service and welcoming atmosphere saw the eatery quickly develop a dedicated following.",
     "parking": false,
+    "comments": [],
 }, 
 {
     "name": "Palette Tea House",
@@ -20,6 +21,7 @@ module.exports = [
     "img": "https://i.imgur.com/btDXbhB.png",
     "description": "The restaurant features vibrant dim sum, authentic wok dishes, and a carefully curated cocktails list.",
     "parking": true,
+    "comments": [],
 }, 
 {
     "name": "Handroll Project",
@@ -31,6 +33,7 @@ module.exports = [
     "img": "https://i.imgur.com/sQsxIez.png",
     "description": "San Francisco’s first hand roll restaurant, from the team behind Michelin starred, Jū-Ni.",
     "parking": false,
+    "comments": [],
 }, 
 {
     "name": "CA Bakehouse",
@@ -42,6 +45,7 @@ module.exports = [
     "img": "https://i.imgur.com/zJY7650.png",
     "description": "Enjoy selections from our buttery layered puff dough to the pandan leaves blended to create a creamy custard for our almond choux.",
     "parking": true,
+    "comments": [],
 }, 
 {
     "name": "Kendejah Restaurant",
@@ -53,6 +57,7 @@ module.exports = [
     "img": "https://i.imgur.com/eZXiTDv.png",
     "description": "At Kendejah Restaurant we serve authentic Liberian cuisine. Our entrees include a variety of vegetarian, seafood and meat dishes.",
     "parking": true,
+    "comments": [],
 }, 
 {
     "name": "Teleferic Barcelona",
@@ -64,6 +69,7 @@ module.exports = [
     "img": "https://i.imgur.com/V0srlV5.png",
     "description": "Telefèric Barcelona is a family-owned restaurant group in California that serves authentic Spanish tapas, paellas, and innovative cocktails.",
     "parking": true,
+    "comments": [],
 }, 
 {
     "name": "Maggiano's Little Italy",
@@ -75,6 +81,7 @@ module.exports = [
     "img": "https://i.imgur.com/gu4o9hX.png",
     "description": "Savor the rich flavors of Italian-American dishes inspired by Nonna’s traditional recipes.",
     "parking": true,
+    "comments": [],
 }, 
 {
     "name": "Bacio di Latte",
@@ -86,6 +93,7 @@ module.exports = [
     "img": "https://i.imgur.com/pD96XZB.png",
     "description": "Bacio di Latte was born in 2011 from Edoardo and Luigi’s passion for gelato, and their desire to share it with the rest of the world.",
     "parking": true,
+    "comments": [],
 }, 
 {
     "name": "TAPS Brewery & Barrel Room",
@@ -97,6 +105,7 @@ module.exports = [
     "img": "https://i.imgur.com/7LG0yPx.png",
     "description": "Enjoy local brews and bar foods.",
     "parking": false,
+    "comments": [],
 }, 
 {
     "name": "Mike's Red Tacos",
@@ -108,6 +117,7 @@ module.exports = [
     "img": "https://i.imgur.com/MOWx17B.png",
     "description": "Our menu is built around our signature Birria tacos, and our famous CrunchStack.  We also have Birria ramen noodle soup, and burritos.",
     "parking": false,
+    "comments": [],
 }, 
 {
     "name": "Snooze, an A.M. Eatery",
@@ -119,5 +129,6 @@ module.exports = [
     "img": "https://i.imgur.com/QGw2n6o.png",
     "description": "At Snooze, we believe that breakfast that makes a difference, is different. So we’re turning mornings upside down and turning our communities and planet the right-side up.",
     "parking": false,
+    "comments": [],
 }, 
 ]

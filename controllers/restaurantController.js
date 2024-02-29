@@ -6,6 +6,9 @@ const isAuthenticated = require("../controllers/isAuthenticated")
 //const restaurantSeed = require("../models/seed")
 
 /*
+Restaurant.deleteMany({})
+console.log("deleted docs")
+
 //Seed Data
 Restaurant.create(restaurantSeed)
 .then(data => {

@@ -28,7 +28,11 @@ app.use(session({
 app.use("/restaurants", require("./controllers/restaurantController"))
 app.use("/users", require("./controllers/userController"))
 app.use("/sessions", require("./controllers/sessions"))
-app.use("/restaurant", require("./controllers/comments"))
+app.use("/", require("./controllers/comments"))
+
+app.get("/", (req, res) => {
+    res.redirect("/restaurants")
+})
 
 app.listen(process.env.PORT, () => {
     console.log("I'm listening...")
