@@ -83,11 +83,16 @@ a:hover {
     display: inline-block;
 }
 
-.nav-container {
+nav {
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
+.welcome {
+    margin-right: 80px;
+}
+/*
 .nav-left {
     justify-content: flex-start;
 
@@ -96,3 +101,4 @@ a:hover {
 .nav-right {
     justify-content: flex-end;
 }
+*/

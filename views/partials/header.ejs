@@ -1,5 +1,4 @@
 <nav>
-    <div class="nav-container">
    
         <div class="nav-right">
             <a href="/restaurants" class="nav-left">Home</a>
@@ -7,20 +6,18 @@
             <a href="/restaurants/new" class="nav-left">Add Restaurant</a>
         </div>
 
-        Welcome <%= currentUser.username %>
+        <h3 class="welcome">Welcome <%= currentUser.username %></h3>
         <div class="nav-left">
                 <form action="/sessions?_method=DELETE" method="POST">
                     <input type="submit" value="Log Out" class="log-out-btn"/>
                 </form>
-        </div>
+        
     <% } else { %>
- 
-        <div class="nav-left">
+        
             <a href="/users/new">Sign Up</a>
             <a href="/sessions/new">Log In</a>
         </div>
 
-    </div>
     <% } %>
 </nav>
 <hr>

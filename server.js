@@ -30,6 +30,6 @@ app.use("/users", require("./controllers/userController"))
 app.use("/sessions", require("./controllers/sessions"))
 app.use("/restaurant", require("./controllers/comments"))
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log("I'm listening...")
 })
