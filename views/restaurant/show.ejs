@@ -29,18 +29,14 @@
     <hr>
     <h2>Add a Comment!</h2>
     <div>
-        <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
-        <textarea name="description"></textarea>
-    </div>
-    <div>
-        <label>Rating</label>
-        <select name="rating">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-        </select>
+        <% if (currentUser) { %>
+            <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
+                <textarea name="description"></textarea>
+        <% } else { %>
+            <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
+                <textarea name="description" placeholder="Log in to add a comment." disabled></textarea>
+        <% } %>
+
     </div>
     <h2></h2>
         <input type="submit" value="Add Comment" class="btn"/>
@@ -49,14 +45,17 @@
     <% if (restaurant.comments.length) { %>
         <h2>Hear what people have to say!</h2>
         <% restaurant.comments.forEach(function(r) { %>
-            <%= r.createdAt.toLocaleDateString() %>
-            <%= r.description %>
-            <%= r.rating %>
+            <div class="comment-container">
+                <div class="comment">
+                    <div><%= r.description %></div>
+                    <div><%= r.createdAt.toLocaleDateString() %></div>
+                </div>
+            </div>
+            <h1></h1>
         <% }) %>
     <% } else { %>
         <h3>No comments yet!</h3>
     <% } %>
-   <%= restaurant.comments.description %>
     
     <%- include ("../partials/footer.ejs") %>
 </body>

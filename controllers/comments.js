@@ -2,9 +2,10 @@ const express = require("express")
 const app = express()
 
 const Restaurant = require("../models/Restaurant")
+const isAuthenticated = require("../controllers/isAuthenticated")
 
 //Create
-app.post("/restaurants/:id/comments", async (req, res) => {
+app.post("/restaurants/:id/comments", isAuthenticated, async (req, res) => {
     try {
         console.log("adding comment")
         const restaurant = await Restaurant.findById(req.params.id)
