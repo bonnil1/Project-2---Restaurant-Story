@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ("../partials/head.ejs") %>
-<body>
+<body class="card-panel lime lighten-2 center-align">
     <%- include ("../partials/header.ejs") %>
     <h1><%= restaurant.name %></h1>
     <div>
@@ -9,7 +9,7 @@
         <div class="show-child"><h3><%= restaurant.price %> | </h3></div>
         <div class="show-child"><h3>☆: <%= restaurant.rating %></h3></div>
     </div>
-    <img src="<%= restaurant.img %>" alt="image">
+    <img class="responsive-img" src="<%= restaurant.img %>" alt="image">
     <h3><%= restaurant.description %></h3>
     <h3><%= restaurant.address %></h3>
     <h3><%= restaurant.hours %></h3>
@@ -30,8 +30,16 @@
     <h2>Add a Comment!</h2>
     <div>
         <% if (currentUser) { %>
-            <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
+            <div>
+                <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
+                <label for="username">User:</label>
+                <input name="username" value="<%= currentUser.username %>"/>
+            </div>
+            <p></p>
+            <div>
+                <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
                 <textarea name="description"></textarea>
+            </div>
         <% } else { %>
             <form method="POST" action="/restaurants/<%= restaurant.id %>/comments">
                 <textarea name="description" placeholder="Log in to add a comment." disabled></textarea>
@@ -47,16 +55,23 @@
         <% restaurant.comments.forEach(function(r) { %>
             <div class="comment-container">
                 <div class="comment">
+                    <div><em><%= r.username %> says:</em></div>
                     <div><%= r.description %></div>
                     <div><%= r.createdAt.toLocaleDateString() %></div>
                 </div>
             </div>
+            <% if (currentUser) { %>
+                <form action="/restaurants/<%= restaurant.id %>/comments/<%= comments.id %>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete" id="button" class="btn delete-btn"/>
+            </form>
+            <% } %>
             <h1></h1>
         <% }) %>
     <% } else { %>
         <h3>No comments yet!</h3>
     <% } %>
-    
+    <!-- Compiled and minified Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <%- include ("../partials/footer.ejs") %>
 </body>
 </html>

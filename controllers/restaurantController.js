@@ -60,8 +60,10 @@ app.post("/", isAuthenticated, async (req, res) => {
 app.get("/:id", async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
+        const comments = restaurant.comments
         res.render("./restaurant/show.ejs", {
             restaurant,
+            comments,
             tabTitle: `${restaurant.name}`,
             currentUser: req.session.currentUser
         })

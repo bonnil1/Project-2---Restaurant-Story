@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include ("../partials/head.ejs") %>
-<body>
+<body class="card-panel lime lighten-2 center-align">
     <%- include ("../partials/header.ejs") %>
     <h1>My Restaurant Story</h1>
     <div class="parent-container">
@@ -9,13 +9,15 @@
             <div class="container">
                 <div>
                     <a href="restaurants/<%= restaurants[i].id %>">
-                        <img src="<%= restaurants[i].img %>" alt="image of restaurant">
+                        <img class="responsive-img" src="<%= restaurants[i].img %>" alt="image of restaurant">
                     </a>
                 </div>
                 <div><h2><%= restaurants[i].name %></h2></div>
             </div>
         <% } %>
     </div>
+    <!-- Compiled and minified Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <%- include ("../partials/footer.ejs") %>
 </body>
 </html>
