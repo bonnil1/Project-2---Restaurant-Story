@@ -18,6 +18,7 @@ app.post("/", async (req, res) => {
         req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
         console.log(req.body)
         const newUser = await User.create(req.body)
+        res.redirect("/sessions/new")
     } catch(err) {
         console.log(err)
     }
