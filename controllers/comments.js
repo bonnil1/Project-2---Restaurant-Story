@@ -8,7 +8,6 @@ const isAuthenticated = require("../controllers/isAuthenticated")
 app.post("/restaurants/:id/comments", isAuthenticated, async (req, res) => {
     try {
         console.log("adding comment")
-        const user = req.session.currentUser
         const restaurant = await Restaurant.findById(req.params.id)
         await restaurant.comments.push(req.body)
         await restaurant.save()

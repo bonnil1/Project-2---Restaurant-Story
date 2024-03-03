@@ -1,23 +1,23 @@
 <nav>
    
-        <div class="nav-right">
-            <a href="/restaurants" class="nav-left">Home</a>
-        <% if (currentUser) { %>
-            <a href="/restaurants/new" class="nav-left">Add Restaurant</a>
-        </div>
+    <div>
+        <a href="/restaurants" class="nav-left">Home</a>
+    <% if (currentUser) { %>
+        <a href="/restaurants/new" class="nav-left">Add Restaurant</a>
+    </div>
 
-        <h3 class="welcome">Welcome <%= currentUser.username %></h3>
-        <div class="nav-left">
-                <form action="/sessions?_method=DELETE" method="POST">
-                    <input type="submit" value="Log Out" class="btn"/>
-                </form>
-        
-    <% } else { %>
-        
-            <a href="/users/new">Sign Up</a>
-            <a href="/sessions/new">Log In</a>
-        </div>
+    <h3 class="welcome">Welcome <%= currentUser.username %></h3>
+    <div>
+            <form action="/sessions?_method=DELETE" method="POST">
+                <input type="submit" value="Log Out" id="log-out-btn"/>
+            </form>
+    
+<% } else { %>
+    
+        <a href="/users/new">Sign Up</a>
+        <a href="/sessions/new">Log In</a>
+    </div>
 
-    <% } %>
+<% } %>
 </nav>
-<hr>
+
