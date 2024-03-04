@@ -150,6 +150,7 @@ textarea {
 
 #log-out-btn:hover {
     color: #6e4f53;
+    cursor: pointer;
 }
 
 a:link:not(#edit) {

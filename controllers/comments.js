@@ -18,12 +18,19 @@ app.post("/restaurants/:id/comments", isAuthenticated, async (req, res) => {
 })
 
 //Delete
-app.delete("/restaurants/:id/comments/:index", isAuthenticated, async (req, res) => {
+app.delete("/restaurants/:id/comments", isAuthenticated, async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
-        const comments = await Restaurant.comments.findById(req.params.index)
-        console.log(comments)
-        await comments.deleteOne()
+        //const comments = restaurant.comments
+        //console.log(comments)
+        console.log(req.params.id)
+        const commentId = req.params.comments.id
+        console.log(commentId)
+        //await Restaurant.comments.id("65e4f1ed4dd90021db06f7fb").remove()
+        //console.log(comment)
+        //await comments.deleteOne()
+        //await Restaurant.save;
+        console.log("comment removed")
         res.redirect(`/restaurants/${restaurant.id}`)
     } catch (err) {
         console.log(err)
