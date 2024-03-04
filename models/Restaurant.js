@@ -21,5 +21,6 @@ const restaurantSchema = new mongoose.Schema({
 })
 
 const Restaurant = mongoose.model("Restaurant", restaurantSchema)
+const Comment = mongoose.model("Comment", commentSchema)
 
-module.exports = Restaurant
+module.exports = {Restaurant, Comment}

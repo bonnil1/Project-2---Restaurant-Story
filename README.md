@@ -2,7 +2,7 @@
 
 My Restaurant Story
 
-A blog for foodie lovers to share their favorite restaurants! Scroll through the site for restaurant recommendations and hear what people have to say.Create an account to add restaurants and interact with other users who share your love for food. 
+A blog for foodie lovers to share their favorite restaurants! Scroll through the site for restaurant recommendations and hear what people have to say. Create an account to add restaurants and interact with other users who share your love for food. 
 
 ![alt text](home.png)
 
@@ -18,11 +18,13 @@ JavaScript
 MongoDB
 Mongoose
 
-Click to view My Restaurant Story
+
+Click to view My Restaurant Story:
 
 https://github.com/bonnil1/Project-2---Restaurant-Story
 
 https://trello.com/b/gmHQ7Xfz/project-2
+
 
 Next Steps: 
 

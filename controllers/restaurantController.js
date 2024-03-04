@@ -1,7 +1,8 @@
 const express = require("express")
 const app = express()
 
-const Restaurant = require("../models/Restaurant")
+const Restaurant = require("../models/Restaurant").Restaurant
+const Comment = require("../models/Restaurant").Comment
 const isAuthenticated = require("../controllers/isAuthenticated")
 //const restaurantSeed = require("../models/seed")
 
@@ -60,10 +61,8 @@ app.post("/", isAuthenticated, async (req, res) => {
 app.get("/:id", async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
-        const comments = restaurant.comments
         res.render("./restaurant/show.ejs", {
             restaurant,
-            comments,
             tabTitle: `${restaurant.name}`,
             currentUser: req.session.currentUser
         })
