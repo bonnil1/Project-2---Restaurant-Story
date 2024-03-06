@@ -18,6 +18,11 @@ JavaScript
 MongoDB
 Mongoose
 
+Resources:
+
+Lecture Notes
+Mongoose Documentation
+W3Schools
 
 Click to view My Restaurant Story:
 
