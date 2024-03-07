@@ -26,7 +26,7 @@ W3Schools
 
 Click to view My Restaurant Story:
 
-https://github.com/bonnil1/Project-2---Restaurant-Story
+https://restaurant-story-544c34f32cfd.herokuapp.com/restaurants
 
 https://trello.com/b/gmHQ7Xfz/project-2
 
@@ -36,5 +36,7 @@ Next Steps:
 ~ Add style to the res.send pages when no user is found and when login information is incorrect.
 
 ~ Create an option for each logged in user to "like" or save a restaurant and have that restaurant saved to their account.
+
+~ Adjust CSS for phone view.
 
 ~ A larger vision - have each user account linked to their own 'my restaurant story'. Account users can comment on another user's 'my restaurant story' but cannot make changes. 
