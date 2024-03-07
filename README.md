@@ -15,6 +15,8 @@ Technologies Used:
 HTML
 CSS
 JavaScript
+Express.js
+Node.js
 MongoDB
 Mongoose
 
