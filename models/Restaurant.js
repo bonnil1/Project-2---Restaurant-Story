@@ -2,12 +2,13 @@ const mongoose = require("mongoose")
 const User = require("../models/User")
 
 const commentSchema = new mongoose.Schema({
+    user: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
     username: String,
-    rating: Number,
     description: String,
 }, {timestamps: true})
 
 const restaurantSchema = new mongoose.Schema({
+    user: {type: mongoose.Schema.Types.ObjectId, ref: "User"},
     name: String,
     address: String,
     hours: String,

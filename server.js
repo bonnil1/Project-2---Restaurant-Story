@@ -25,6 +25,7 @@ app.use(session({
     saveUninitialized: false,
 }))
 
+
 app.use("/restaurants", require("./controllers/restaurantController"))
 app.use("/users", require("./controllers/userController"))
 app.use("/sessions", require("./controllers/sessions"))

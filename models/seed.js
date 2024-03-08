@@ -23,6 +23,9 @@ module.exports = [
     "parking": true,
     "comments": [],
 }, 
+]
+
+/*
 {
     "name": "Handroll Project",
     "address": "598 Guerrero St San Francisco, CA 94110",
@@ -131,4 +134,4 @@ module.exports = [
     "parking": false,
     "comments": [],
 }, 
-]
+*/

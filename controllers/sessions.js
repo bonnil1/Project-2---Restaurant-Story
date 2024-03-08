@@ -22,6 +22,7 @@ app.post("/", async (req, res) => {
             res.send(`<a href="/">Sorry, no user found!</a>`)
         } else if(bcrypt.compareSync(req.body.password, foundUser.password)) {
             req.session.currentUser = foundUser
+            //console.log(foundUser)
             res.redirect("/restaurants")
         } else {
             res.send(`<a href="/">Username or Password is incorrect.</a>`)

@@ -51,6 +51,9 @@ app.get("/new", isAuthenticated, async (req, res) => {
 app.post("/", isAuthenticated, async (req, res) => {
     try {
         const newRestaurant = await Restaurant.create(req.body)
+        newRestaurant.user = req.session.currentUser
+        await newRestaurant.save()
+        console.log(newRestaurant)
         res.redirect("/restaurants")
     } catch (err) {
         console.log(err)
@@ -61,10 +64,13 @@ app.post("/", isAuthenticated, async (req, res) => {
 app.get("/:id", async (req, res) => {
     try {
         const restaurant = await Restaurant.findById(req.params.id)
+        current = req.session.currentUser
+        //console.log(req.session.currentUser)
         res.render("./restaurant/show.ejs", {
             restaurant,
             tabTitle: `${restaurant.name}`,
-            currentUser: req.session.currentUser
+            currentUser: req.session.currentUser,
+            current
         })
     } catch (err) {
         console.log(err)

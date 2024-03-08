@@ -20,11 +20,13 @@
     <% } %>
     <div>
         <% if (currentUser) { %>
-            <a href="/restaurants/<%= restaurant.id %>/edit" type="button" id="edit">Edit</a>
+            <% if (current._id == restaurant.user) { %>
+                <a href="/restaurants/<%= restaurant.id %>/edit" type="button" id="edit">Edit</a>
             <h2></h2>
             <form action="/restaurants/<%= restaurant.id %>?_method=DELETE" method="POST">
                 <input type="submit" value="Delete" id="button"/>
             </form>
+            <% } %>
         <% } %>
     </div>  
     <h2></h2>
@@ -63,9 +65,11 @@
                 </div>
             </div>
             <% if (currentUser) { %>
-                <form action="/restaurants/<%= restaurant.id %>/comments/<%= r.id %>?_method=DELETE" method="POST">
-                <input type="submit" value="Delete" id="button"/>
-            </form>
+                <% if (current._id == r.user) { %>
+                    <form action="/restaurants/<%= restaurant.id %>/comments/<%= r.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" id="button"/>
+                    </form>
+                <% } %>
             <% } %>
             <h1></h1>
         <% }) %>
