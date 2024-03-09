@@ -25,6 +25,8 @@ Resources:
 Lecture Notes
 Mongoose Documentation
 W3Schools
+Stack Overflow
+Guide to User-Centric CRUD
 
 Click to view My Restaurant Story:
 
@@ -41,4 +43,4 @@ Next Steps:
 
 ~ Adjust CSS for phone view.
 
-~ A larger vision - have each user account linked to their own 'my restaurant story'. Account users can comment on another user's 'my restaurant story' but cannot make changes. 
+~ A larger vision - have each user account linked to their own 'my restaurant story'. 
