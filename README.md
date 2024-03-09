@@ -12,21 +12,21 @@ A blog for foodie lovers to share their favorite restaurants! Scroll through the
 
 Technologies Used:
 
-HTML
-CSS
-JavaScript
-Express.js
-Node.js
-MongoDB
-Mongoose
+HTML <br/>
+CSS <br/>
+JavaScript <br/>
+Express.js <br/>
+Node.js <br/>
+MongoDB <br/>
+Mongoose <br/>
 
 Resources:
 
-Lecture Notes
-Mongoose Documentation
-W3Schools
-Stack Overflow
-Guide to User-Centric CRUD
+Lecture Notes <br/>
+Mongoose Documentation <br/>
+W3Schools <br/>
+Stack Overflow <br/>
+Guide to User-Centric CRUD <br/>
 
 Click to view My Restaurant Story:
 
